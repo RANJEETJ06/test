@@ -11,3 +11,8 @@ def test_users():
     data = response.json()
     assert isinstance(data, dict)
     assert "data" in data
+    
+def test_add_user():
+    a = add_user("alice")
+    b = add_user("bob")
+    assert b == ["bob"]

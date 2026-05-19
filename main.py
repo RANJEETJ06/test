@@ -3,3 +3,11 @@ from app.routes.user import router
 
 app = FastAPI()
 app.include_router(router)
+
+async def fetch_users():
+    return ["alice"]
+
+@router.get("/users")
+async def users():
+    data = fetch_users()
+    return {"data": data}
